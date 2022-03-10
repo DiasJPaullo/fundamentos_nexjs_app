@@ -1,6 +1,6 @@
 module.exports = {
-  purge: {
-    content: [
+content:
+     [
       './src/pages/**/*.{js,ts,jsx,tsx}',
       './src/components/**/*.{js,ts,jsx,tsx}',
     ],
@@ -8,9 +8,8 @@ module.exports = {
       /^bg-/,
       /^to-/,
       /^from-/
-    ]
+    ],
 
-  },
   theme: {
     extend: {},
   },
