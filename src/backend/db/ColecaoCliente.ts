@@ -1,3 +1,4 @@
+import { doc } from "firebase/firestore";
 import Cliente from "../../core/Cliente";
 import ClienteRepositorio from "../../core/ClienteRepositorio";
 import firebase from "../config";
@@ -34,7 +35,8 @@ export default class ColecaoCliente implements ClienteRepositorio{
   }
 
   async obterTodos(): Promise<Cliente[]> {
-    return null
+    const query = await this.colecao().get()
+    return query.docs.map(doc => doc.data()) ?? []
   } 
 
   private colecao(){
